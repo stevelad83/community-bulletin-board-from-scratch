@@ -1,7 +1,10 @@
 /* Imports */
 
-/* Get DOM Elements */
+import { fetchPosts } from './fetch-utlis.js';
 
+/* Get DOM Elements */
+const signUpForm = document.getElementById('sign-up');
+const signInForm = document.getElementById('sign-in');
 /* State */
 
 /* Events */
