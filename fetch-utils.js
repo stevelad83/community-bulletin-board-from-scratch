@@ -36,3 +36,5 @@ export async function checkAuth() {
     const user = await getUser();
     if (!user) location.replace('/');
 }
+
+export async function createNewPost(post) 
