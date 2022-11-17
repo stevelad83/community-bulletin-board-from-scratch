@@ -1,6 +1,6 @@
 /* Imports */
 
-import { fetchPosts, signUpUser } from './fetch-utlis.js';
+import { fetchPosts, signUpUser, signInUser, checkAuth } from './fetch-utils.js';
 
 /* Get DOM Elements */
 const signUpForm = document.getElementById('sign-up');
@@ -16,6 +16,20 @@ signUpForm.addEventListener('submit', async (e) => {
 
     if (user) {
         location.replace('../other-page');
+    }
+});
+
+signInForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(signInForm);
+    const email = data.get('email');
+    console.log(data.get('password'));
+    const user = await signInUser(email, data.get('password'));
+    if (user) {
+        location.replace('/other-page');
+    } else {
+        // checkAuth();
+        console.log(user);
     }
 });
 
