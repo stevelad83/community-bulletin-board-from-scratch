@@ -30,4 +30,10 @@ export async function checkAuth() {
     if (!user) location.replace('/');
 }
 
+export async function logout() {
+    await client.auth.signOut();
+
+    return (window.location.href = '/');
+}
+
 // export async function createNewPost(post);

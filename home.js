@@ -1,8 +1,9 @@
-import { fetchPosts } from './fetch-utils.js';
+import { fetchPosts, logout } from './fetch-utils.js';
 import { renderPost } from './render-utils.js';
 
 const postsContainer = document.getElementById('posts-container');
 const signUpInBtn = document.getElementById('sign-up-in-button');
+const logOutBtn = document.getElementById('log-out-button');
 
 window.addEventListener('load', async (e) => {
     e.preventDefault();
@@ -16,4 +17,8 @@ window.addEventListener('load', async (e) => {
 
 signUpInBtn.addEventListener('click', () => {
     location.replace('auth/index.html');
+});
+
+logOutBtn.addEventListener('click', () => {
+    logout();
 });
