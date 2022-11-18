@@ -19,16 +19,9 @@ export async function signUpUser(email, password) {
     return response.user;
 }
 
-// export async function signInUser(email, password) {
-//     const response = await client.auth.signIn({ email, password });
-//     console.log(response, 'response');
-//     return response.user;
-// }
-
 export async function signInUser(email, password) {
-    console.log(client.auth.session());
     const response = await client.auth.signIn({ email, password });
-    console.log(response);
+
     return response;
 }
 
