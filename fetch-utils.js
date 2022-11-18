@@ -36,4 +36,7 @@ export async function logout() {
     return (window.location.href = '/');
 }
 
-// export async function createNewPost(post);
+export async function createNewPost(post) {
+    const response = await client.from('posts').insert(post);
+    return response;
+}

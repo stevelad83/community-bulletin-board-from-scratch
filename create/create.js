@@ -2,7 +2,7 @@ import { createNewPost } from '../fetch-utils.js';
 
 const createForm = document.getElementById('create-form');
 const postDisplayDiv = document.getElementById('posts-container');
-// const createButton = document.getElementById('submit-btn');
+const submitBtn = document.getElementById('submit-btn');
 
 createForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -11,6 +11,10 @@ createForm.addEventListener('submit', async (e) => {
     const post = await createNewPost(data.get('title', 'description', 'contact'));
     postDisplayDiv.append(post);
 
-    location.replace('../');
+    // location.replace('../');
     return postDisplayDiv;
+});
+
+submitBtn.addEventListener('click', () => {
+    location.replace('../');
 });
