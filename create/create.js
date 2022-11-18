@@ -7,14 +7,12 @@ const submitBtn = document.getElementById('submit-btn');
 createForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(createForm);
+    const post = {
+        title: data.get('title'),
+        description: data.get('description'),
+        contact: data.get('contact'),
+    };
+    await createNewPost(post);
 
-    const post = await createNewPost(data.get('title', 'description', 'contact'));
-    postDisplayDiv.append(post);
-
-    // location.replace('../');
-    return postDisplayDiv;
-});
-
-submitBtn.addEventListener('click', () => {
     location.replace('../');
 });

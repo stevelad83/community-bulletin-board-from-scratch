@@ -38,5 +38,10 @@ export async function logout() {
 
 export async function createNewPost(post) {
     const response = await client.from('posts').insert(post);
-    return response;
+    console.log(response.data);
+    if (response.data) {
+        return response.data;
+    } else {
+        console.log(response.error);
+    }
 }
