@@ -15,31 +15,35 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="home.js"></script>
+        <script type="module" src="create.js"></script>
 
         <!-- fonts -->
         <!-- see https://fonts.google.com/ -->
 
         <!-- css -->
-        <link rel="stylesheet" href="styles/reset.css" />
-        <link rel="stylesheet" href="styles/global.css" />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header>
-            <img class="logo" src="assets/html_css_js.png" alt="logo" />
             <h1>Web App</h1>
-            <button id="sign-up-in-button">Sign up / Sign in</button>
+            <a href="../">Home</a>
         </header>
 
         <main>
             <div>
-                <h2>Posts</h2>
-                <div id="posts-container"></div>
+                <form id="create-form">
+                    <label>Title</label>
+                    <input type="text" name="title" />
+                    <label>Description</label>
+                    <input type="text" name="description" />
+                    <label>Contact</label>
+                    <input type="text" name="contact" />
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
             </div>
-            <button id="log-out-button">Log-out</button>
-            <a href="./create/index.html">Write your post!</a>
         </main>
     </body>
 </html>
