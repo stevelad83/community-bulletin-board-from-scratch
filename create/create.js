@@ -1,8 +1,8 @@
-import { createNewPost } from '../fetch-utils.js';
+import { checkAuth, createNewPost } from '../fetch-utils.js';
 
 const createForm = document.getElementById('create-form');
-const postDisplayDiv = document.getElementById('posts-container');
-const submitBtn = document.getElementById('submit-btn');
+// const postDisplayDiv = document.getElementById('posts-container');
+// const submitBtn = document.getElementById('submit-btn');
 
 createForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -15,4 +15,10 @@ createForm.addEventListener('submit', async (e) => {
     await createNewPost(post);
 
     location.replace('../');
+});
+
+window.addEventListener('load', async (e) => {
+    e.preventDefault();
+
+    checkAuth();
 });
